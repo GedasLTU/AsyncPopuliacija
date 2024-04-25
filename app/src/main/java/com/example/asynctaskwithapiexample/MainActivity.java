@@ -59,9 +59,7 @@ public class MainActivity extends AppCompatActivity {
             public void onPostExecute(String result) {
                 tvStatus.setText(getString(R.string.data_loaded) + result);
             }
-        //}.execute(Constants.GUNFIRE_URL);
-        //}.execute(Constants.FLOATRATES_API_URL);
-        }.execute(Constants.METEOLT_API_URL);
+        }.execute(Constants.JAV_POP_URL);
     }
 
     public void getDataByThread() {
@@ -70,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    final String result = ApiDataReader.getValuesFromApi(Constants.FLOATRATES_API_URL);
+                    final String result = ApiDataReader.getValuesFromApi(Constants.JAV_POP_URL);
                     //final String result = ApiDataReader.getValuesFromApi(Constants.METEOLT_API_URL);
                     Runnable updateUIRunnable = new Runnable() {
                         @Override
